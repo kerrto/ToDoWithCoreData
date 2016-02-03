@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
