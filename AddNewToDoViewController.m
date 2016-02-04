@@ -7,6 +7,7 @@
 //
 
 #import "AddNewToDoViewController.h"
+#import "DetailViewController.h"
 
 @interface AddNewToDoViewController ()
 
@@ -54,14 +55,30 @@
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
     NSManagedObject *newToDo = [[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
     
+    
+    
     [newToDo setValue:toDoTitle forKey:@"title"];
     [newToDo setValue:toDoDetail forKey:@"doDescription"];
     [newToDo setValue:numberPriority forKey:@"priority"];
     
+    
+    
     [del saveContext];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    [self performSegueWithIdentifier:@"seeNewItem" sender:newToDo];
+    
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"seeNewItem"]) {
+        
+        
+        DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
+        [controller setDetailItem:sender];
+        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    }
+}
 
 
 

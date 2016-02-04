@@ -49,14 +49,20 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
+                        <barButtonItem key="leftBarButtonItem" title="Back To List" id="qHi-yK-I8H">
+                            <connections>
+                                <action selector="backToRootViewLabel:" destination="JEX-9P-axG" id="gZK-05-cmH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-7"/>
+            <point key="canvasLocation" x="704" y="-1730"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -86,12 +92,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-pc-aOh">
-                                <rect key="frame" x="111" y="143" width="97" height="30"/>
+                                <rect key="frame" x="35" y="137" width="247" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s0S-cA-bgX">
-                                <rect key="frame" x="106" y="225" width="97" height="30"/>
+                                <rect key="frame" x="35" y="225" width="247" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -107,11 +113,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAM-Y6-JDI">
-                                <rect key="frame" x="111" y="324" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priority: #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOp-Zw-DRe">
                                 <rect key="frame" x="116" y="288" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -131,6 +132,11 @@
                                     <action selector="saveNewToDo:" destination="2ww-OZ-THI" eventType="touchUpInside" id="N6W-8P-XSn"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAM-Y6-JDI">
+                                <rect key="frame" x="35" y="323" width="247" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -140,6 +146,7 @@
                         <outlet property="detailTF" destination="s0S-cA-bgX" id="Jk1-S5-772"/>
                         <outlet property="priorityTF" destination="tAM-Y6-JDI" id="t35-ne-1gd"/>
                         <outlet property="titleTF" destination="bSL-pc-aOh" id="8uP-Vo-c7A"/>
+                        <segue destination="JEX-9P-axG" kind="show" identifier="seeNewItem" id="pXz-aS-Q7w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyi-Ts-fMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +170,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT8-Gd-9Pk">
-                                            <rect key="frame" x="19" y="11" width="101" height="21"/>
+                                            <rect key="frame" x="19" y="0.0" width="130" height="32"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -179,6 +186,7 @@
                                 <connections>
                                     <outlet property="priorityCellLabel" destination="xKE-yY-Tvi" id="rRp-Eu-EvD"/>
                                     <outlet property="titleCellLabel" destination="eT8-Gd-9Pk" id="DJ6-C1-I7T"/>
+                                    <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="gBv-CS-Xim"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -214,7 +222,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="-21"/>
+            <point key="canvasLocation" x="293" y="-1744"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0jl-g1-rlJ">
@@ -237,6 +245,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="pXz-aS-Q7w"/>
         <segue reference="ufn-3H-7nO"/>
     </inferredMetricsTieBreakers>
 </document>

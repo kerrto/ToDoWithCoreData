@@ -28,7 +28,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"title"] description];
     }
 }
 
@@ -43,4 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backToRootViewLabel:(UIBarButtonItem *)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];    
+}
 @end
