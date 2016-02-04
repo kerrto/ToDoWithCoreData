@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @property (nonatomic, strong)id detailItem;
+@property (strong, nonatomic) IBOutlet UILabel *priorityLabel;
+@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
