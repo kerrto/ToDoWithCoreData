@@ -10,7 +10,7 @@
 
 @interface DetailViewController : UIViewController
 
-- (IBAction)backToRootViewLabel:(UIBarButtonItem *)sender;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 

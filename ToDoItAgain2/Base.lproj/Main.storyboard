@@ -83,11 +83,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
-                        <barButtonItem key="leftBarButtonItem" title="Back To List" id="qHi-yK-I8H">
-                            <connections>
-                                <action selector="backToRootViewLabel:" destination="JEX-9P-axG" id="gZK-05-cmH"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Add More Items" id="FOR-gt-MUS"/>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="WlF-iQ-plr" id="FNA-C8-Y46"/>
@@ -330,7 +326,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pXz-aS-Q7w"/>
+        <segue reference="gBv-CS-Xim"/>
         <segue reference="ufn-3H-7nO"/>
     </inferredMetricsTieBreakers>
 </document>
