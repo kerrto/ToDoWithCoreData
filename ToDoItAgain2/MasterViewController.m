@@ -11,6 +11,7 @@
 #import "AddNewToDoViewController.h"
 #import "ToDoTableViewCell.h"
 
+
 @interface MasterViewController ()
 
 @end
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
